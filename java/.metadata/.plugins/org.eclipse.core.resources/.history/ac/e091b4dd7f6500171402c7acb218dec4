@@ -4,16 +4,24 @@ public class daysOfYear {
 
 	int year;
 	int month;
-	public void setyear(int y) 	{
+	public void setyear(int y) throws Exception
+	{
 		if(y>0){
 			year=y;
 		}
-		
+		else{
+			Exception exception = new Exception("year not proper");
+			throw exception;
+		}
 	}
-	public void setmonth(int m)
+	public void setmonth(int m) throws Exception
 	{
 		if(m>0 && m<=12){
 			month=m;
+		}
+		else{
+			Exception exception = new Exception("Month not proper");
+			throw exception;
 		}
 	}
 	public int getDays()
