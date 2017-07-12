@@ -12,10 +12,6 @@ public class highestPrime {
 	try{
 	n1=sc.nextInt();
 	n2=sc.nextInt();
-	if(n1<2||n2<2){
-		System.out.println("Enter right data!!");
-		setNum();
-	}
 	}
 	catch(InputMismatchException e)
 	{
@@ -38,7 +34,7 @@ public class highestPrime {
 	}
 	public String find()
 	{
-		for(;n2>=n1;n2--)
+		for(;n2>n1;n2--)
 		{
 			if(isprime(n2))return "Highest Prime number is "+n2;
 		}
