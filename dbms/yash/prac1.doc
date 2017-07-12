@@ -1,0 +1,72 @@
+SQL> create table emp_18(eid number(4),ename varchar2(45),eadd varchar2(45));
+
+Table created.
+
+SQL> alter table emp_18 add salary number(10);
+
+Table altered.
+
+SQL> alter table emp_18 modify salary number(15);
+
+Table altered.
+
+SQL> insert into emp_18 values('&eid','&ename','&edd','&salary');
+Enter value for eid: 1
+Enter value for ename: yash
+Enter value for edd: bhandup
+Enter value for salary: 1
+old   1: insert into emp_18 values('&eid','&ename','&edd','&salary')
+new   1: insert into emp_18 values('1','yash','bhandup','1')
+
+1 row created.
+
+SQL> /
+Enter value for eid: 2
+Enter value for ename: kritika
+Enter value for edd: malad
+Enter value for salary: -2
+old   1: insert into emp_18 values('&eid','&ename','&edd','&salary')
+new   1: insert into emp_18 values('2','kritika','malad','-2')
+
+1 row created.
+
+SQL> /
+Enter value for eid: 3
+Enter value for ename: harshil
+Enter value for edd: vasai
+Enter value for salary: 25000
+old   1: insert into emp_18 values('&eid','&ename','&edd','&salary')
+new   1: insert into emp_18 values('3','harshil','vasai','25000')
+
+1 row created.
+
+SQL> /
+Enter value for eid: 4
+Enter value for ename: abdul
+Enter value for edd: jogeshwari
+Enter value for salary: 1
+old   1: insert into emp_18 values('&eid','&ename','&edd','&salary')
+new   1: insert into emp_18 values('4','abdul','jogeshwari','1')
+
+1 row created.
+
+SQL> truncate emp_18
+  2  ;
+
+*
+ERROR at line 2:
+ORA-03290: Invalid truncate command - missing CLUSTER or TABLE keyword 
+
+
+SQL> truncate table emp_18
+  2  ;
+
+Table truncated.
+
+SQL> 
+SQL> drop table emp_18
+  2  ;
+
+Table dropped.
+
+SQL> spool off
