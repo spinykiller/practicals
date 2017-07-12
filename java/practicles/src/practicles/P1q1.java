@@ -1,4 +1,5 @@
 package practicles;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class P1q1 {
@@ -9,7 +10,7 @@ System.out.println("Enter Year:");
 try{
 	d.setyear(sc.nextInt());
 }	
-catch(Exception e)
+catch(InputMismatchException e)
 {
 System.out.println("Wrong format!!try again");
 d.setyear(sc.nextInt());
@@ -18,7 +19,7 @@ System.out.println("Enter Month:");
 try{
 	d.setmonth(sc.nextInt());
 }	
-catch(Exception e)
+catch(InputMismatchException e)
 {
 System.out.println("Wrong format!!try again");
 d.setmonth(sc.nextInt());
