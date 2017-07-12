@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class P1q4 {
 public static void main(String[] ars){
-	//draw shape if hollow triangle
 	System.out.println("Enter the length");
 	Scanner sc =new Scanner(System.in);
 	int height=sc.nextInt();
