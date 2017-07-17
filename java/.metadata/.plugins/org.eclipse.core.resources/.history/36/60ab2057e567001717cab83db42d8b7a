@@ -1,0 +1,29 @@
+package pract;
+
+import java.util.Scanner;
+
+public class prog1 {
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int num,i,sum=0;
+		int a[]=new int[20];
+		System.out.println("Enter total numbers : ");
+		num=sc.nextInt();
+		for(i=0;i<num;i++)
+		{
+			System.out.println("Enter Number : ");
+			a[i]=sc.nextInt();
+		}
+		for(i=0;i<num;i++)
+		{
+			if(a[i]>0)
+			{
+				sum+=a[i];
+			}
+		}
+		System.out.println("Sum Of Positive Numbers are : "+sum);
+	}
+
+}
