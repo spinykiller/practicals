@@ -1,0 +1,37 @@
+package practicles;
+
+import java.util.Scanner;
+
+public class P1q4 {
+public static void main(String[] ars){
+	System.out.println("Enter the length");
+	Scanner sc =new Scanner(System.in);
+	int height=sc.nextInt();
+	int base=height*2;
+	int curRow=0;
+	int curCol=0;
+	while(curRow<height-1)
+	{
+		while(curCol<base)
+		{	
+			if(curCol==(height-curRow)||curCol==(height+curRow))
+			{
+			System.out.print("*");
+			}
+			else{
+				System.out.print(" ");		
+			}
+			curCol++;
+		}
+		System.out.println("");
+		System.out.print(" ");
+		curRow++;
+		curCol=0;
+	}
+	while(curCol<base)
+	{
+		System.out.print("*");
+		curCol++;
+	}
+}
+}

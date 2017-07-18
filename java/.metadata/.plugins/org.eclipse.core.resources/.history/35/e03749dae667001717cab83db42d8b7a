@@ -1,0 +1,23 @@
+package pract;
+import java.util.Scanner;
+
+public class tables {
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Tables : ");
+		int i,j,tab;
+		for(i=5;i<11;i++)
+		{
+			for(j=1;j<11;j++)
+			{
+				if(i!=6)
+				{
+					tab=i*j;
+					System.out.print(i+"*"+j+"="+tab);
+				}
+			}
+		}
+	}
+
+}
