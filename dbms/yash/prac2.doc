@@ -1,0 +1,84 @@
+SQL> 
+SQL> create table customer(cid number(10),cName varchar2(32),cAddress varchar2(50),panNo varchar(16));
+
+Table created.
+
+SQL> alter table customer add contraint cid_pk primary key(cid);
+alter table customer add contraint cid_pk primary key(cid)
+                                                      *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option 
+
+
+SQL> alter table customer add constraint cid_pk primary key(cid);
+
+Table altered.
+
+SQL> alter table customer add contraint notnullKey NOT NULL(cAddress);
+alter table customer add contraint notnullKey NOT NULL(cAddress)
+                                                       *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option 
+
+
+SQL> alter table customer add constraint notnullKey NOT NULL(cAddress);
+alter table customer add constraint notnullKey NOT NULL(cAddress)
+                                               *
+ERROR at line 1:
+ORA-00904: : invalid identifier 
+
+
+SQL> drop table customer
+  2  ;
+
+Table dropped.
+
+SQL> create table customer(cid number(10) primary key,cName varchar(32) NOT NULL,cAddress varchar2(50) unique,panNo varchar(16));
+
+Table created.
+
+SQL> create table account(aid number(10),cid number(10) references customer,atype varchar2(10) default 'savings',balance number(10));
+
+Table created.
+
+SQL> alter table account add contraint aid_pk primary key(aid);
+alter table account add contraint aid_pk primary key(aid)
+                                                     *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option 
+
+
+SQL> alter table account add contraint aid_pk primary key (aid);
+alter table account add contraint aid_pk primary key (aid)
+                                                      *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option 
+
+
+SQL> alter table account add constraintaid_pk primary key (aid);
+alter table account add constraintaid_pk primary key (aid)
+                                                      *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option 
+
+
+SQL>  alter table account add constraint aid_pk primary key (aid);
+
+Table altered.
+
+SQL> alter table account modify atype default ;
+alter table account modify atype default 
+                                        *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL>  alter table account modify atype default NULL;
+
+Table altered.
+
+SQL>  alter table account modify atype NOT NULL;
+
+Table altered.
+
+SQL> spool off
